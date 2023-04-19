@@ -1,0 +1,77 @@
+{%load static%}
+<!doctype html>
+<html lang="en">
+  <head>
+  	<meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Login</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="{% static 'images/favicon.png' %}" rel="icon">
+
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+
+
+
+  <!-- Template Main CSS File -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet">
+	</head>
+	<body>
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-md-6 text-center mb-5">
+					<h2 class="heading-section"></h2>
+				</div>
+			</div>
+			<div class="row justify-content-center">
+				<div class=" d-flex align-items-center justify-content-center col-md-12 col-lg-12">
+					<div>
+						<div class="login-wrap p-4 p-lg-5">
+			      	        <div class="d-flex">
+			      		        <div class="w-100">
+			      			        <a href="C:\Users\91759\Desktop\Gp"><h3 class="mb-4">Register</h3></a>
+			      		        </div>
+			      	        </div>
+							<form method="post"  class="signin-form">
+                                {% csrf_token %}
+                                <div class="form-group mb-3">
+			      			        <label class="label" for="username">Username</label>
+			      			        <input type="text" class="form-control" name="username" placeholder="Username" id="username">
+			      		        </div>
+		                        <div class="form-group mb-3">
+		            	            <label class="label" for="password">Password</label>
+		                            <input type="password" name="password" class="form-control" placeholder="Password" id="password">
+		                        </div>
+                                <div class="form-group mb-3">
+		            	            <label class="label" for="re-password">Password</label>
+		                            <input type="password" name="confirm-password" class="form-control" placeholder="Confirm Password" id="re-password">
+		                        </div>
+		                        <div class="form-group">
+		            	            <button type="submit" class="form-control btn btn-primary submit px-3">Sign In</button>
+		                        </div>
+                                {% for msg in messages %}
+                                {{msg}}
+                                {% endfor %}
+		                    </form>
+		                </div>
+		            </div>
+				</div>
+			</div>
+		</div>
+
+
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/popper.js' %}"></script>
+  <script src="{% static 'js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'js/main.js' %}"></script>
+
+	</body>
+</html>
